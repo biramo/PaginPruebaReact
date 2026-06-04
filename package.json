@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "proyecto1",
+=======
+  "name": "ejerciciosreact",
+>>>>>>> 8e33741c129df4619f34b4684e7c541b5ba2f04f
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +14,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^12.14.0",
+=======
+>>>>>>> 8e33741c129df4619f34b4684e7c541b5ba2f04f
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
