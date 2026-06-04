@@ -1,0 +1,62 @@
+.lista-frutas{
+    display:flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 1em;
+    text-align: center;
+    padding: 0.8em;
+    border: 1px dotted green;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    height: 100%;
+    
+    
+}
+
+
+
+.lista-frutas ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 100%;
+    list-style: none;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5em;
+    width: 100%;
+}
+
+.lista-frutas li{
+    flex: 1 1 220px;
+    min-width: 220px;
+    transition: background-color 2s ease, transform 1s ease;
+    border: 1px solid rgb(212, 141, 34);
+    padding: 0.3em;
+    border-radius: 10px;
+    background-color: rgb(84, 207, 111);
+    width: auto;
+}
+
+.lista-frutas li:hover{
+    background-color: rgb(87, 145, 127);
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+.comprar-carrito{
+    text-align: center;
+    margin:0 auto;
+    padding: 0.5em;
+    background-color: rgb(201, 154, 52);
+    border-radius: 6px;
+    
+}
+
+.comprar-carrito:hover{    
+    cursor: pointer;
+}
+
+
+

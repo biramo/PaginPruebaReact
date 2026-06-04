@@ -1,0 +1,76 @@
+.form-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    
+    /* Controlamos el tamaño aquí, en el contenedor principal */
+    width: 100%;
+    max-width: 400px; /* Evita que en PC se estire infinito */
+    margin: 0;   /* Lo centra horizontalmente */
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.form-inicio-sesion h2 {
+    width: 100%; /* Ocupa el ancho del formulario */
+    font-weight: bold;
+    border: solid 1px purple;
+    border-radius: 8px;
+    background-color: white;
+    padding: 0.3em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-inicio-sesion input {
+    width: 100%; 
+    padding: 0.6em; 
+    border-radius: 8px;
+    border: 1px solid #ccc; 
+    box-sizing: border-box;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}
+
+/* Corregido el selector de focus */
+.form-inicio-sesion input:hover, 
+.form-inicio-sesion input:focus {
+   transform: translateY(-3px);
+   background-color: rgb(153, 255, 255);
+   outline: solid black 1px;
+}
+
+.init-sesion-btn{
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    padding: 10px;
+    border: solid 1px purple;
+    border-radius: 8px;
+    background-color: #e2e287;
+    font-weight: bold;
+
+}
+
+.init-sesion-btn:hover,
+.init-sesion-btn:focus{
+    transform: scale(1.1);
+    background-color: #b3b36c;
+    cursor: pointer;
+
+}
+
+.auth-link{
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 8px;
+    border: solid rgb(34, 126, 212) 1px;
+    background-color: white;
+    color: rgb(28, 106, 179);
+    padding: 0.3em;
+}
+
+.auth-link:hover,
+.auth-link:focus{
+    background-color: rgb(197, 192, 192);
+    transform: scale(1.1);
+    cursor: pointer;
+}

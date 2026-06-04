@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: beige;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    border: solid purple 1px;
+    padding: 1em;
+    margin-top: 1.5em;
+    background-color: rgb(41, 145, 206);
+}
+
+.iniciar-btn{
+    transition: background-color 1.5s ease, color 1s ease, transform 0.5s ease;
+    border: solid rgb(173, 62, 62) 1px;
+    padding: 0.5em;
+    background-color: rgb(155, 106, 202);
+    border-radius:6px;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.iniciar-btn:hover{
+    border: solid rgb(173, 62, 62) 1px;
+    background-color: rgb(247, 135, 135);
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.aviso{
+    text-align: center;
+    margin: 1em auto;
+    max-width: 30%;
+    padding: 0.5em;
+    background-color: rgb(238, 238, 85);
+}

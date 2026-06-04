@@ -1,0 +1,35 @@
+.fruta-div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 0;
+}
+
+.fruta-div li{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.eliminar-fruta{
+    transition: background-color 1s ease, color 1s ease, transform 0.5s ease;
+    background-color: rgb(187, 68, 68);
+    border:none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 0.3em;
+    width: auto;
+
+}
+
+.eliminar-fruta:hover{
+    cursor: pointer;
+    background-color: brown;
+    color:rgb(228, 228, 97);
+    transform: scale(1.08);
+}

@@ -1,0 +1,62 @@
+.resumen-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.resumen-compra h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resumen-compra ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resumen-compra li {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    background: #fafafa;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    transition: transform .2s;
+}
+
+.resumen-compra li:hover {
+    transform: translateY(-3px);
+}
+
+.resumen-compra li::before {
+    content: "✓ ";
+    color: green;
+    font-weight: bold;
+}
+
+.resumen-compra p{
+    border: solid 1px #ddd;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgb(0,0,0,.1);
+}
+
+.btn-volver{
+    width: 100%;
+    height: 30px;
+    border: solid 1px rgb(216, 119, 119);
+    border-radius: 7px;
+    background-color: #2991CE;
+}
