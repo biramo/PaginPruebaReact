@@ -1,35 +1,50 @@
-.fruta-div{
+.fruta-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Empuja el botón siempre al fondo */
     gap: 0.8em;
-    align-items: center;
-    width: 100%;
-    max-width: 320px;
-    padding: 0;
+    padding: 0.8em;
+    border-radius: 10px;
+    background-color: rgb(84, 207, 111);
+    transition: background-color 0.5s ease, transform 0.3s ease;
 }
 
-.fruta-div li{
+.fruta-contenido {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
     width: 100%;
 }
 
+.fruta-nombre {
+    font-weight: bold;
+    font-size: 1.1em;
+}
 
-.eliminar-fruta{
-    transition: background-color 1s ease, color 1s ease, transform 0.5s ease;
+/* 🌟 CONTROL DE IMÁGENES REALES */
+.fruta-img {
+    width: 100%;
+    height: 160px; /* Altura fija para que todas las tarjetas midan lo mismo */
+    object-fit: cover; /* Recorta la imagen armoniosamente sin deformarla */
+    border-radius: 6px;
+}
+
+.eliminar-fruta {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     background-color: rgb(187, 68, 68);
-    border:none;
+    border: none;
     border-radius: 8px;
     color: white;
     font-weight: bold;
-    padding: 0.3em;
-    width: auto;
-
+    padding: 0.5em;
+    width: 100%; /* Ocupa el ancho de la tarjeta */
+    margin-top: auto; /* Se alinea abajo automáticamente */
 }
 
-.eliminar-fruta:hover{
+.eliminar-fruta:hover {
     cursor: pointer;
     background-color: brown;
-    color:rgb(228, 228, 97);
-    transform: scale(1.08);
+    color: rgb(228, 228, 97);
+    transform: scale(1.02);
 }

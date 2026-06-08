@@ -23,7 +23,9 @@
     margin: 0;
 }
 
-.resumen-compra li {
+.resumen-item {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 12px;
@@ -32,6 +34,19 @@
     transition: transform .2s;
 }
 
+.span-row {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+/* El segundo span organiza sus hijos en columna (vertical) */
+.span-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el texto a la izquierda dentro de la columna */
+  gap: 0.2rem;             /* Espacio entre la cantidad y el precio */
+}
 .resumen-compra li:hover {
     transform: translateY(-3px);
 }
@@ -42,7 +57,9 @@
     font-weight: bold;
 }
 
-.resumen-compra p{
+.total-productos{
+    display: flex;
+    flex-direction: column;
     border: solid 1px #ddd;
     background-color: rgb(255, 255, 255);
     border-radius: 6px;

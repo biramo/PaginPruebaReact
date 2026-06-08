@@ -2,36 +2,106 @@
   {
     "id": 1,
     "nombre": "Manzana",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 1.99,
+    "imagen": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&auto=format&fit=crop&q=60"
   },
   {
     "id": 2,
     "nombre": "Pera",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 2.49,
+    "imagen": "https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?w=500&auto=format&fit=crop&q=60"
   },
   {
     "id": 3,
     "nombre": "Naranja",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 1.75,
+    "imagen": "https://images.unsplash.com/photo-1547514701-42782101795e?w=500&auto=format&fit=crop&q=60"
   },
   {
     "id": 4,
     "nombre": "Plátano",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 1.80,
+    "imagen": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&auto=format&fit=crop&q=60"
   },
   {
     "id": 5,
     "nombre": "Fresa",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 3.50,
+    "imagen": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500&auto=format&fit=crop&q=60"
   },
   {
     "id": 6,
     "nombre": "Paraguayo",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 2.99,
+    "imagen": "https://images.unsplash.com/photo-1628114300957-c3dbcb67332f?w=500&auto=format&fit=crop&q=60"
   },
-   {
+  {
     "id": 7,
     "nombre": "Limon",
-    "cantidad": 0
+    "cantidad": 0,
+    "precio": 1.60,
+    "imagen": "https://images.unsplash.com/photo-1590502593747-42a996133562?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 8,
+    "nombre": "Uva Negra",
+    "cantidad": 0,
+    "precio": 3.20,
+    "imagen": "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 9,
+    "nombre": "Sandía",
+    "cantidad": 0,
+    "precio": 4.50,
+    "imagen": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 10,
+    "nombre": "Melón",
+    "cantidad": 0,
+    "precio": 3.80,
+    "imagen":"https://www.gastronomiavasca.net/uploads/image/file/3392/w700_melon.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Kiwi",
+    "cantidad": 0,
+    "precio": 3.10,
+    "imagen": "https://images.unsplash.com/photo-1585059895524-72359e06133a?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 12,
+    "nombre": "Piña",
+    "cantidad": 0,
+    "precio": 2.70,
+    "imagen": "https://www.google.com/imgres?q=melon&imgurl=https%3A%2F%2Fwww.gastronomiavasca.net%2Fuploads%2Fimage%2Ffile%2F3392%2Fw700_melon.jpg&imgrefurl=https%3A%2F%2Fwww.gastronomiavasca.net%2Fes%2Fgastro%2Fglossary%2Fmelon&docid=ixtAxQL9VtGe8M&tbnid=Wtq4ksWJxR3j3M&vet=12ahUKEwjp18zbyfeUAxWZh_0HHXPRJpMQnPAOegQIHhAB..i&w=700&h=525&hcb=2&ved=2ahUKEwjp18zbyfeUAxWZh_0HHXPRJpMQnPAOegQIHhAB"
+  },
+  {
+    "id": 13,
+    "nombre": "Melocotón",
+    "cantidad": 0,
+    "precio": 2.65,
+    "imagen": "https://images.unsplash.com/photo-1595855759920-86582396756a?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 14,
+    "nombre": "Aguacate",
+    "cantidad": 0,
+    "precio": 4.99,
+    "imagen": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 15,
+    "nombre": "Mango",
+    "cantidad": 0,
+    "precio": 2.85,
+    "imagen": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&auto=format&fit=crop&q=60"
   }
 ]

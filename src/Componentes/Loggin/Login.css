@@ -10,6 +10,7 @@
     margin: 0;   /* Lo centra horizontalmente */
     padding: 20px;
     box-sizing: border-box; 
+    margin: 0 auto ;
 }
 
 .form-inicio-sesion h2 {

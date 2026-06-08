@@ -9,12 +9,13 @@ import './css/ResumenCompra.css'
 export default function Lista(){
 
    // DESPUÉS — datos de la API
-    const [frutas, setFrutas] = useState([]);
+    const [frutas, setFrutas] = useState(datosFrutas);
     const [busqueda, setBusqueda]=useState("")
     const [resultados, setResultados] = useState([]);
     const [compraTerminada,setCompraTerminada]=useState(false);
 
-
+    /*
+    Api encargada de recoger los productos
     useEffect(() => {
     fetch("https://world.openfoodfacts.org/cgi/search.pl?search_terms=fruit&json=1&page_size=10")
         .then(res => res.json())
@@ -28,6 +29,7 @@ export default function Lista(){
         setFrutas(productosFormateados);
         });
     }, []);
+    */
    
     useEffect(()=>{
         const filtrados=frutas.filter((producto)=>{

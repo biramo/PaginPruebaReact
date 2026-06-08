@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-
+import { useNavigate } from 'react-router-dom'  
 export default function Login() {
   const { user, login, register, logout } = useAuth();
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
@@ -18,19 +19,11 @@ export default function Login() {
       } else {
         await login(email, password);
       }
+      navigate('/tienda');
     } catch (err) {
         setError(err.message);
     }
   };
-
-  if (user) {
-    return (
-      <>
-        <h1>¡Bienvenido, {user.email}! 🎉</h1>
-        <button onClick={logout}>Cerrar sesión</button>
-      </>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} class="form-inicio-sesion">
