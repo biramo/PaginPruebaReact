@@ -1,7 +1,8 @@
 import datosFrutas from './frutas.json'
 import {useState, useEffect} from 'react'
 import ResumenCompra from './ResumenCompra'
-import FrutaItem from './FrutaItem' // 1. Importación relativa
+import FrutaItem from './FrutaItem' 
+import {useCart} from '../context/CartContext'
 import './css/FrutaItem.css'
 import './css/Lista.css'
 import './css/ResumenCompra.css'
@@ -9,6 +10,7 @@ import './css/ResumenCompra.css'
 export default function Lista(){
 
    // DESPUÉS — datos de la API
+    const { sumarProducto, restarProducto } = useCart();
     const [frutas, setFrutas] = useState(datosFrutas);
     const [busqueda, setBusqueda]=useState("")
     const [resultados, setResultados] = useState([]);
@@ -39,59 +41,9 @@ export default function Lista(){
         setResultados(filtrados)
     },[busqueda,frutas])
    
-    
-   const restarFruta=(idEliminar)=>{
-    const nuevasFrutas = frutas.map((fruta) => {
-        if (fruta.id === idEliminar) {
-            if(fruta.cantidad>0){
-                return { ...fruta, cantidad: fruta.cantidad - 1 };
-            }
-        }
-
-        return fruta;
-        });
-    
-        setFrutas(nuevasFrutas);
-   };
-
-   const sumarFruta = (idAnadir) => {
-    // Recorremos el array con .map() para clonarlo y modificar solo la fruta elegida
-    const nuevasFrutas = frutas.map((fruta) => {
-      if (fruta.id === idAnadir) {
-        // Si coincide el ID, devolvemos la fruta con la cantidad sumada
-        return { ...fruta, cantidad: fruta.cantidad + 1 };
-      }
-      // Si no coincide, la dejamos exactamente como estaba
-      return fruta;
-    });
-
-    // Guardamos el nuevo array en el estado
-    setFrutas(nuevasFrutas);
-  };
-
-  const totalFrutas = frutas.reduce((acumulator,fruta)=>{
-
-    return acumulator +fruta.cantidad;
-
-  },0)
-
-  if (compraTerminada) {
-        const frutasCompradas = frutas.filter(fruta => fruta.cantidad > 0);
-
-        return (
-            <ResumenCompra 
-                frutasCompradas={frutasCompradas} 
-                totalFrutas={totalFrutas} 
-                setCompraTerminada={() => setCompraTerminada(false)} // Apaga el interruptor para regresar
-            />
-        );
-    }
-
     return (
         <div className="lista-frutas">
             <h2>Frutas disponibles</h2>
-            <h3>Total frutas: {totalFrutas}</h3>
-            <p>Pulsa la fruta para añadirla al carrito</p>
             <form className='form-busqueda'>
                 <input type="text" 
                 placeholder='Buscar producto...'
@@ -104,13 +56,11 @@ export default function Lista(){
                     <FrutaItem 
                         key={fruta.id} 
                         fruta={fruta} 
-                        onSumar={sumarFruta} 
-                        onRestar={restarFruta}
+                        onSumar={sumarProducto} 
+                        onRestar={restarProducto}
                     />
                 ))}
             </ul>
-                
-            <button onClick={()=>setCompraTerminada(true)} className='comprar-carrito'>Ver Carrito</button>
         </div>
     );
 }
