@@ -7,17 +7,6 @@ body{
     background-color: beige;
 }
 
-header{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap:10px;
-    border: solid purple 1px;
-    padding: 1em;
-    margin-top: 1.5em;
-    background-color: rgb(41, 145, 206);
-}
-
 .iniciar-btn{
     transition: background-color 1.5s ease, color 1s ease, transform 0.5s ease;
     border: solid rgb(173, 62, 62) 1px;

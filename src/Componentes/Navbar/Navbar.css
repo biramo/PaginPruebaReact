@@ -1,25 +1,84 @@
 .navbar {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0.8em 1.5em;
   background-color: rgb(84, 207, 111);
   border-bottom: 1px solid rgb(212, 141, 34);
-  height: 3em ;
 }
 
-.navbar span {
+.title {
+  transition: transform 0.3s ease;
   font-weight: bold;
 }
 
-.navbar button {
-  margin-left: 1em;
+.title:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.user-email{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  word-break: break-all;
+  
+}
+
+.usuario-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-acciones{
   padding: 0.4em 0.8em;
+  flex: 1 1 0;
   border-radius: 8px;
   border: none;
-  background-color: rgb(187, 68, 68);
+  transition: transform 0.3s ease ;
+  font-weight: bold;  
   color: white;
+  width: 100%;
+
+}
+
+.btn-acciones:hover{
   cursor: pointer;
-  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.btn-carrito {
+  background-color: rgb(187, 68, 68);
+}
+
+
+.btn-mi-cuenta{
+  background-color: #619fdd;
+
+}
+
+@media (min-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .usuario-container {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: 15px;
+  }
+
+  .btn-acciones {
+    width: auto; /* En PC recuperan su tamaño normal */
+  }
 }

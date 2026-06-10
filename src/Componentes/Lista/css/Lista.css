@@ -30,6 +30,7 @@
 .lista-frutas li{
     flex: 1 1 220px;
     min-width: 220px;
+    max-width: 300px;
     transition: background-color 2s ease, transform 1s ease;
     border: 1px solid rgb(212, 141, 34);
     padding: 0.3em;

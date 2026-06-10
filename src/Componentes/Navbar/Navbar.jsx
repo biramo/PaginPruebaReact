@@ -1,29 +1,30 @@
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext"; 
+import './Navbar.css'
+
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
    const { totalUnidades } = useCart();
 
-  const handleLogout = async () => {
-    await logout();
-    navigate('/login');
-  };
+ 
 
   if (!user) return null; // no muestra nada si no hay sesión
 
   return (
-    <nav className="navbar">
-      <span>🍎 Frutería React</span>
-      <div>
-        <span>{user.email}</span>
-         <button onClick={() => navigate('/carrito')}>
-          🛒 {totalUnidades > 0 && <strong>{totalUnidades}</strong>}
-        </button>
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      </div>
-    </nav>
+    <header>
+      <nav className="navbar">
+        <span className="title" onClick={()=>navigate('/tienda')}>🍎 Frutería React</span>
+        <div className="usuario-container">
+          <span className="user-email">{user.email}</span>
+          <button className="btn-carrito btn-acciones" onClick={() => navigate('/carrito')}>
+            🛒 {totalUnidades > 0 && <strong>{totalUnidades}</strong>}
+          </button>
+          <button className="btn-mi-cuenta btn-acciones" onClick={()=>navigate("/mi-cuenta")}>Mi Cuenta</button>
+        </div>
+      </nav>
+    </header>
   );
 }

@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from 'react-router-dom'  
 import { sendPasswordResetEmail } from "firebase/auth"; 
 import { auth } from "../DB_firebase/firebase";
+import './Login.css'
 
 export default function Login() {
   const { user, login, register, logout } = useAuth();

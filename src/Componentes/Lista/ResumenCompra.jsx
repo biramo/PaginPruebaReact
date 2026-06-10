@@ -6,13 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 export default function ResumenCompra() {
   // Ya no recibe props, todo viene del contexto
-  const { carrito, totalUnidades, totalPrecio, vaciarCarrito } = useCart();
+  const { carrito, totalUnidades, totalPrecio, vaciarCarrito, restarProducto } = useCart();
   const { user } = useAuth();
   const { enviarConfirmacion } = useEnviarEmail();
   const navigate = useNavigate();
   const [enviado, setEnviado] = useState(false);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState("");
+
 
   const handleConfirmar = async () => {
     setCargando(true);
@@ -71,6 +72,7 @@ export default function ResumenCompra() {
               <span>Cantidad: {fruta.cantidad}</span>
               <span>Precio: {fruta.precio}€</span>
             </span>
+            <button className="btn-restar" onClick={()=>restarProducto(fruta.id)}>Restar</button>
           </li>
         ))}
       </ul>

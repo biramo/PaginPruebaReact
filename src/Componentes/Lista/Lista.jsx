@@ -39,7 +39,7 @@ export default function Lista(){
         })
 
         setResultados(filtrados)
-    },[busqueda,frutas])
+    },[busqueda])
    
     return (
         <div className="lista-frutas">
