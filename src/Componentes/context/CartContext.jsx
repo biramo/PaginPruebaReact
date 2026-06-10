@@ -18,7 +18,6 @@ export function CartProvider({ children }) {
 
   // Añadir o sumar producto
   const sumarProducto = (producto) => {
-    console.log("Producto que llega al carrito:", producto);
     setCarrito(prev => {
       const existe = prev.find(p => p.id === producto.id);
       if (existe) {

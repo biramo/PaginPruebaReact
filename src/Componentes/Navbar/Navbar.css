@@ -37,15 +37,16 @@
 }
 
 .btn-acciones{
-  padding: 0.4em 0.8em;
   flex: 1 1 0;
+  font-size: 1rem;
+  padding: 0.6em 1.2em;
   border-radius: 8px;
   border: none;
   transition: transform 0.3s ease ;
   font-weight: bold;  
   color: white;
   width: 100%;
-
+  box-sizing: border-box;
 }
 
 .btn-acciones:hover{
@@ -79,6 +80,6 @@
   }
 
   .btn-acciones {
-    width: auto; /* En PC recuperan su tamaño normal */
+    width: 100%; /* En PC recuperan su tamaño normal */
   }
 }

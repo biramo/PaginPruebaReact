@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from 'react-router-dom'  
-import { sendPasswordResetEmail } from "firebase/auth"; 
+import { sendPasswordResetEmail, updateProfile } from "firebase/auth"; 
 import { auth } from "../DB_firebase/firebase";
 import './Login.css'
 
 export default function Login() {
+
   const { user, login, register, logout } = useAuth();
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
+  const [compPassword, setCompPassword]=useState("");
+  const [nombre, setNombre]=useState("");
   const [error, setError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [mensajeReset, setMensajeReset] = useState(""); 
@@ -20,7 +23,15 @@ export default function Login() {
 
     try {
       if (isRegistering) {
-        await register(email, password);
+        if(compPassword!==password){
+          setError("Contraseña no coincide")
+          return;
+        }
+        const userCredential = await register(email, password);
+        await updateProfile(userCredential.user,{
+          displayName:nombre
+        })
+
       } else {
         await login(email, password);
       }
@@ -46,11 +57,12 @@ export default function Login() {
     }
   };
 
-  return (
+  if(!isRegistering){
+    return(
     <form onSubmit={handleSubmit} className="form-inicio-sesion">
-      <h2>{isRegistering ? "Crear cuenta" : "Iniciar sesión"}</h2>
-      {mensajeReset && <p>{mensajeReset}</p>}
-      {error && <p>{error}</p>}
+      <h2> Iniciar sesión</h2>
+      <p>{mensajeReset}</p>
+      <p>{error}</p>
       <input
         type="email"
         placeholder="Email"
@@ -68,31 +80,66 @@ export default function Login() {
       <button type="submit" className="init-sesion-btn">
         {isRegistering ? "Registrarse" : "Entrar"}
       </button>
-
-      {!isRegistering && (
         <span className="auth-link" onClick={handleResetPassword}>
           ¿Olvidaste tu contraseña?
         </span>
-      )}
+          <p onClick={() => {
+        setIsRegistering(!isRegistering);
+        setEmail("");
+        setPassword("");
+        setError("");
+          }}>
+          <span>¿No tienes cuenta?</span>{" "}
+          <span className="auth-link">Regístrate</span> 
+        </p>
+    </form>
+      );
+  }
 
+
+  return (   
+   <form onSubmit={handleSubmit} className="form-inicio-sesion">
+      <h2> Registrate</h2>
+      <p>{error}</p>
+      <input type="text"
+      placeholder="Usuario"
+      value={nombre}
+      onChange={(e)=>setNombre(e.target.value)}
+      required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Contraseña"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        placeholder="Repite la contraseña"
+        value={compPassword}
+        onChange={(e)=>setCompPassword(e.target.value)}
+        />
+      <button type="submit" className="init-sesion-btn">
+        Registrarse
+      </button>
       <p onClick={() => {
         setIsRegistering(!isRegistering);
         setEmail("");
         setPassword("");
         setError("");
           }}>
-        {isRegistering ? (
-          <>
-            <span>¿Ya tienes cuenta?</span>{" "}
-            <span className="auth-link">Inicia sesión</span>
-          </>
-        ) : (
-          <>
-            <span>¿No tienes cuenta?</span>{" "}
-            <span className="auth-link">Regístrate</span>
-          </>
-        )}
-      </p>
+     <span>¿Ya tienes cuenta?</span>
+     <span className="auth-link">Inicia sesión</span>
+       </p>
     </form>
+
   );
 }

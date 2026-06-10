@@ -68,6 +68,12 @@
     text-align: center;
 }
 
+.info-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .pedidos-vacio{
     display: flex;
     flex-direction: column;

@@ -18,11 +18,11 @@ export default function Navbar() {
       <nav className="navbar">
         <span className="title" onClick={()=>navigate('/tienda')}>🍎 Frutería React</span>
         <div className="usuario-container">
-          <span className="user-email">{user.email}</span>
+          <span className="user-email">{user.displayName}</span>
           <button className="btn-carrito btn-acciones" onClick={() => navigate('/carrito')}>
             🛒 {totalUnidades > 0 && <strong>{totalUnidades}</strong>}
           </button>
-          <button className="btn-mi-cuenta btn-acciones" onClick={()=>navigate("/mi-cuenta")}>Mi Cuenta</button>
+          <button className="btn-mi-cuenta btn-acciones" onClick={()=>navigate("/mi-cuenta")}>Cuenta</button>
         </div>
       </nav>
     </header>

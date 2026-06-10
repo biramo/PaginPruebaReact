@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import ResumenCompra from './ResumenCompra'
 import FrutaItem from './FrutaItem' 
 import {useCart} from '../context/CartContext'
+import Spinner from '../Spiner/Spiner'
 import './css/FrutaItem.css'
 import './css/Lista.css'
 import './css/ResumenCompra.css'
@@ -41,11 +42,12 @@ export default function Lista(){
         setResultados(filtrados)
     },[busqueda])
    
+
     return (
         <div className="lista-frutas">
             <h2>Frutas disponibles</h2>
             <form className='form-busqueda'>
-                <input type="text" 
+                <input className="input-busqueda" type="text" 
                 placeholder='Buscar producto...'
                 value={busqueda}
                 onChange={(e)=>setBusqueda(e.target.value)}    
