@@ -68,5 +68,18 @@
     margin: 0 auto;
 }
 
+.filtros {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+.select-orden {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid rgb(212, 141, 34);
+  background-color: white;
+  cursor: pointer;
+}
 

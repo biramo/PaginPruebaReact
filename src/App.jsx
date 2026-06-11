@@ -10,6 +10,7 @@ import PrivateRoute from './Componentes/PrivateRoute'
 import { CartProvider } from './Componentes/context/CartContext'; 
 import ResumenCompra from './Componentes/Lista/ResumenCompra' 
 import MiCuenta from './Componentes/MiCuenta/MiCuenta';
+import NotFound from './Componentes/NotFound/NotFound';
 
 function MainContent() {
   const { user } = useAuth();
@@ -39,10 +40,7 @@ function MainContent() {
           </PrivateRoute>
         } />
         {/* Ruta por defecto: redirige según si hay sesión */}
-        <Route
-          path="*"
-          element={<Navigate to={user ? "/tienda" : "/login"} />}
-        />
+        <Route path="*" element={user ? <NotFound /> : <Navigate to="/login" />} />
       </Routes>
     </>
   );
