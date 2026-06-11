@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from 'react-router-dom'  
 import { sendPasswordResetEmail, updateProfile } from "firebase/auth"; 
@@ -16,6 +16,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [mensajeReset, setMensajeReset] = useState(""); 
+  const [verPassword, setVerPassword]=useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,12 +72,22 @@ export default function Login() {
         required
       />
       <input
-        type="password"
+        type={verPassword ? "text":"password"}
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
+      <label className="checkbox-container">
+        <input 
+          className="checkbox-input"
+          type="checkbox"
+          checked={verPassword}
+          // 💡 Tip: Usa onChange en vez de onClick para inputs tipo checkbox/radio en React
+          onChange={() => setVerPassword(!verPassword)}   
+        />
+        <span>Mostrar contraseña</span>
+      </label>
       <button type="submit" className="init-sesion-btn">
         {isRegistering ? "Registrarse" : "Entrar"}
       </button>
@@ -115,18 +126,28 @@ export default function Login() {
         required
       />
       <input
-        type="password"
+        type={verPassword ? "text":"password"}
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
       <input
-        type="password"
+        type={verPassword ? "text":"password"}
         placeholder="Repite la contraseña"
         value={compPassword}
         onChange={(e)=>setCompPassword(e.target.value)}
         />
+      <label className="checkbox-container">
+        <input 
+          className="checkbox-input"
+          type="checkbox"
+          checked={verPassword}
+          // 💡 Tip: Usa onChange en vez de onClick para inputs tipo checkbox/radio en React
+          onChange={() => setVerPassword(!verPassword)}   
+        />
+        <span>Mostrar contraseña</span>
+      </label>  
       <button type="submit" className="init-sesion-btn">
         Registrarse
       </button>
