@@ -1,0 +1,143 @@
+.container-box{
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgb(0,0,0,0.3);
+}
+
+.mi-cuenta-container{
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1em;
+    gap: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+
+.mi-cuenta-header{
+    max-width:600px;
+    margin: 0 auto ;
+    text-align: center;
+    padding: 1.5em;
+}
+
+.mi-cuenta-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3em;
+    color: #333;
+}
+
+.mi-cuenta-header .bienvenida {
+    color: #666; 
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.mi-cuenta-content{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.perfil-info-card,.perfil-pedidos-card{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1em;
+    gap:15px;
+    
+}
+
+.perfil-info-card label{
+    flex:1;
+    min-width: 0;
+    font-weight: bold;
+}
+
+.perfil-info-card h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.3em;
+    color: #333;
+    text-align: center;
+}
+
+.info-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pedidos-vacio{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.btn-comprar{
+    margin: 0 auto;
+    padding: 0.5em;
+    background-color: rgb(219, 158, 43);
+    border-radius: 5px;
+
+}
+
+.btn-comprar:hover{
+    cursor: pointer;
+}
+
+.mi-cuenta-actions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.2em;
+    
+    background-color: #f4fbf6; 
+    border-top: 2px solid #54CF6F; 
+    
+    max-width: 900px;
+    width: 100%;
+    margin: 1.5em auto 0 auto; 
+    
+    flex-wrap: wrap;
+    gap: 15px; 
+    box-sizing: border-box;
+}
+
+.btn-actions {
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    padding: 0.8em 1.5em; 
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); 
+}
+
+.btn-actions:hover {
+    transform: translateY(-3px); /* En vez de crecer, "flota" un poquito hacia arriba (muy moderno) */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-menu-principal {
+    background-color: #D48D22;
+}
+
+.btn-menu-principal:hover {
+    background-color: rgb(219, 158, 43);
+}
+
+.btn-cerrar-sesion {
+    background-color: rgb(206, 65, 65);
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: rgb(230, 80, 80);
+}

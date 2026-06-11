@@ -3,10 +3,12 @@ import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import { useEnviarEmail } from "../Email/useEnviarEmail";
 import { useNavigate } from "react-router-dom";
+import { db } from "../DB_firebase/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function ResumenCompra() {
   // Ya no recibe props, todo viene del contexto
-  const { carrito, totalUnidades, totalPrecio, vaciarCarrito } = useCart();
+  const { carrito, totalUnidades, totalPrecio, vaciarCarrito, restarProducto } = useCart();
   const { user } = useAuth();
   const { enviarConfirmacion } = useEnviarEmail();
   const navigate = useNavigate();
@@ -14,11 +16,27 @@ export default function ResumenCompra() {
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState("");
 
+
+  //Guardado de pedido y envio de correo
   const handleConfirmar = async () => {
     setCargando(true);
     setError("");
+    //envia el correo
     try {
       const numeroPedido = Math.floor(Math.random() * 900000) + 100000;
+      
+       // Guarda el pedido en Firestore
+      await addDoc(collection(db, "pedidos"), {
+        uid:          user.uid,        // ← id del usuario
+        email:        user.email,
+        numeroPedido,
+        productos:    carrito,
+        totalUnidades,
+        totalPrecio,
+        fecha:        serverTimestamp() // ← fecha automática
+      });
+      
+      //Envio de correo
       await enviarConfirmacion({
         emailUsuario: user.email,
         productos:    carrito,
@@ -71,6 +89,7 @@ export default function ResumenCompra() {
               <span>Cantidad: {fruta.cantidad}</span>
               <span>Precio: {fruta.precio}€</span>
             </span>
+            <button className="btn-restar" onClick={()=>restarProducto(fruta.id)}>Restar</button>
           </li>
         ))}
       </ul>

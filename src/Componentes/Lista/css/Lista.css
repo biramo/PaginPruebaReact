@@ -1,7 +1,7 @@
 .lista-frutas{
     display:flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
     margin: 1em;
     text-align: center;
     padding: 0.8em;
@@ -30,6 +30,7 @@
 .lista-frutas li{
     flex: 1 1 220px;
     min-width: 220px;
+    max-width: 300px;
     transition: background-color 2s ease, transform 1s ease;
     border: 1px solid rgb(212, 141, 34);
     padding: 0.3em;
@@ -58,5 +59,27 @@
     cursor: pointer;
 }
 
+.input-busqueda{
+    padding: 0.3em;
+    border-radius: 3px;
+    border: solid 1px black;
+    width: 35%;
+    min-width: 200px;
+    margin: 0 auto;
+}
 
+.filtros {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.select-orden {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid rgb(212, 141, 34);
+  background-color: white;
+  cursor: pointer;
+}
 
